@@ -1,5 +1,12 @@
 version: 2 # use CircleCI 2.0
 jobs: # basic units of work in a run
+  init: 
+     docker:
+      - image: node 
+      parallelism :3  
+      steps :
+       - run : echo 'works'
+        
   build: # runs not using Workflows must have a `build` job as entry point
     docker: # run the steps with Docker
       # CircleCI Go images available at: https://hub.docker.com/r/circleci/golang/
